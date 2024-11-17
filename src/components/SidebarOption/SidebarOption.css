@@ -1,0 +1,12 @@
+
+.yt-sidebar-option--container {
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.yt-sidebar-option--container:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+}

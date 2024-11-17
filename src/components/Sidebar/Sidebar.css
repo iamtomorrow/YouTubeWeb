@@ -1,0 +1,37 @@
+
+.yt-sidebar--container {
+    width: 220px;
+    height: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    transform: translateX(0%);
+    top: 0;
+    transition: all .15s ease;
+    overflow-y: auto;
+}
+
+.yt-sidebar--container--off {
+    width: 220px;
+    height: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    transform: translateX(-100%);
+    transition: all .15s ease;
+}
+
+.yt-sidebar-section--container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.yt-bar-line--container {
+    width: 90%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+}
