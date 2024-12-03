@@ -9,8 +9,11 @@ const API_KEY = "AIzaSyALCb09HUmzFXF1qwPvyLv_DoyxWh7pDX0";
 const BASE_URL = "https://youtube.googleapis.com/youtube/v3";
 
 export const VideoGrid = ( ) => {
-    const { videos } = useVideosContext( );
-    // const [ videos, setVideos ] = useState<VideoCardProps[]>([]);
+    const VideoContext = useVideosContext( );
+
+    useEffect(( ) => {
+        console.log("VIDEOS: ", VideoContext?.videos);
+    }, [ ]);
 
     return (
         <div
@@ -26,16 +29,16 @@ export const VideoGrid = ( ) => {
                 display: "flex",
                 flexDirection: "row",
                 flexWrap: "wrap",
+                // background: "red"
             }}>
                 {
-                    videos ?
-                    videos.map((item) => (
+                    VideoContext !== null &&
+                    VideoContext.videos.map((item) => (
                         <VideoCard 
                             title={ item.title }
                             channelTitle={ item.channel.name }
                         />
                     ))
-                    : <p>No videos found</p>
                 }
             </div>
         </div>
