@@ -23,18 +23,8 @@ export const VideosContextProvider = ({ children }: ChildrenProps) => {
     }, [ ]);
 
     const updateVideos = async ( ) => {
-        try {
-            const response = await axios.get("http://localhost:3200/videos");
-            const data = await response.data( );
-    
-            console.log("DATA: ", data);
-            setVideos( data.data.items as VideoCardProps[] );
-        } catch(error) {
-            console.log("ERROR: ", error);
-            setVideos( prev => [] );
-        } finally {
-            console.log("Request finished.");
-        }
+        const data = await fetch("/api/videos");
+        console.log("DATA: ", data);
     }
 
     return (
